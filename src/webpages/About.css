@@ -1,0 +1,32 @@
+.about-container {
+  font-family: var(--font-mono, monospace);
+  font-weight: 100;
+  font-size: clamp(0.82rem, 1.45vw, 1rem);
+  line-height: 1.75;
+  margin: 0 auto;
+  max-width: 62ch;
+  width: 100%;
+  text-align: justify;
+  color: var(--text, #5b4735);
+  display: grid;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  
+  animation: pageFadeIn 0.5s 0.2s forwards cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.about-container p {
+  hyphens: auto;
+}
+
+@media (max-width: 720px) {
+  .about-container {
+    max-width: 100%;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+}
+
+@keyframes pageFadeIn {
+  to { opacity: 1; }
+}

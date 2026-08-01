@@ -1,0 +1,123 @@
+.tour-event-card {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.1rem 1.15rem;
+  border: 1px solid var(--panel-border, rgba(91, 71, 53, 0.15));
+  border-radius: 1rem;
+  background: var(--panel, rgba(255, 255, 255, 0.16));
+  box-shadow: var(--panel-shadow, 0 10px 30px rgba(91, 71, 53, 0.08));
+  backdrop-filter: blur(8px);
+  transform: translateY(0) scale(1);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+  will-change: transform;
+}
+
+.tour-event-card,
+.tour-event-card * {
+  box-sizing: border-box;
+}
+
+.tour-event-card:hover,
+.tour-event-card:focus-within {
+  transform: translateY(-4px) scale(1.01);
+  border-color: var(--panel-border-strong, rgba(91, 71, 53, 0.28));
+  background: var(--panel-hover, rgba(255, 255, 255, 0.22));
+  box-shadow: var(--panel-shadow-strong, 0 18px 40px rgba(91, 71, 53, 0.14));
+}
+
+.tour-event-card__date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.9rem;
+  border-radius: 0.9rem;
+  background: var(--card-background, #5b4735);
+  color: var(--card-text, #f8f1e8);
+  text-align: center;
+  line-height: 1;
+  transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.tour-event-card:hover .tour-event-card__date,
+.tour-event-card:focus-within .tour-event-card__date {
+  transform: translateY(-1px);
+  background: var(--card-background-hover, #6a5340);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.tour-event-card__year {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  opacity: 0.75;
+}
+
+.tour-event-card__day {
+  margin-top: 0.35rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.tour-event-card__content {
+  min-width: 0;
+}
+
+.tour-event-card__title {
+  margin: 0;
+  color: var(--card-title, #5b4735);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.15;
+  transition: transform 180ms ease, color 180ms ease;
+}
+
+.tour-event-card__location {
+  margin: 0.4rem 0 0;
+  color: var(--card-body, #6a5340);
+  font-size: clamp(0.88rem, 1.4vw, 0.95rem);
+  transition: color 180ms ease;
+}
+
+.tour-event-card:hover .tour-event-card__location,
+.tour-event-card:focus-within .tour-event-card__location {
+  color: var(--card-accent-soft, rgba(91, 71, 53, 0.94));
+}
+
+.tour-event-card:hover .tour-event-card__title,
+.tour-event-card:focus-within .tour-event-card__title {
+  transform: translateX(2px);
+  color: var(--card-accent, #4f3d2d);
+}
+
+@media (max-width: 640px) {
+  .tour-event-card {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .tour-event-card__date {
+    width: 100%;
+    min-height: 4rem;
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+
+  .tour-event-card__day {
+    margin-top: 0;
+  }
+
+  .tour-event-card__year,
+  .tour-event-card__day {
+    font-size: 0.9rem;
+  }
+
+  .tour-event-card:hover,
+  .tour-event-card:focus-within {
+    transform: translateY(-2px) scale(1.005);
+  }
+}
